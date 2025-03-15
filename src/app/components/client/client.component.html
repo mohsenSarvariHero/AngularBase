@@ -1,0 +1,83 @@
+<p>client works!</p>
+<div class="row">
+    <div class="col-8">
+        <div class="card">
+            <div class="card-header bg-success">
+                client List
+            </div>
+            <div class="card-body">
+                <div class="col-12">
+                    <table class="table table-bordered my-5">
+                      <thead>
+                        <tr>
+                          <th>
+                            num
+                          </th>
+                          <th>
+                            RoleName
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        @for(item of city; track $index){
+                            <tr>
+                                <td>{{$index+1}}</td>
+                                <td>{{city}}</td>
+                            </tr>
+                        }
+                        <tr>
+                          <td>12</td>
+                          <td>coding</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="card">
+            <div class="card-header bg-success">
+                New Client
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-6">
+                        <label for="">Name</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="col-6">
+                        <label for="">Name</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="col-6">
+                        <label for="">Name</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="col-6">
+                        <label for="">Name</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="col-6">
+                        <label for="">Name</label>
+                        <input type="text" class="form-control" >
+                    </div>
+                    <div class="col-6">
+                        <label for="">City</label>
+                        <input type="text" class="form-control" [(ngModel)]="clientObj.city">
+                    </div>
+                </div>
+                <div class="row pt-2">
+                    <div class="col-6 text-center">
+                        <button class="btn btn-secondary">Reset</button>
+                        
+                    </div>
+                    <div class="col-6 text-center">
+                        <button class="btn btn-success" (click)="onSaveClient()">Save client</button>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

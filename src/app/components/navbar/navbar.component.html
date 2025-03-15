@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="master.component.css">
+</head>
+<body>
+    <div class="container">
+        <h1>{{currentDate | date:"dd-MMM-yyyy"}}</h1>
+        <header class="header">
+            <h1>Moh <span>sen</span></h1>
+            <nav>
+                <a href="#">link0</a>
+                <a href="#">link2</a>
+                <a href="#">link3</a>
+                <a href="#">link4</a>
+            </nav>
+            <button>contact</button>
+        </header>
+
+        <h2>{{firstName()}}</h2>
+        <button class="btn btn-secondary" (click)="change()">change</button>
+    </div>
+</body>
+</html>
