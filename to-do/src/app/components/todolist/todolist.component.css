@@ -1,0 +1,45 @@
+/* components/todo-list/todo-list.component.css */
+.todo-container {
+    width: 300px;
+    margin: auto;
+    text-align: left;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 10px;
+    background-color: antiquewhite;
+    border-bottom: 2px solid black;
+    transition: 0.5s;
+    width: 150%;
+    margin: 2px auto;
+    margin-right: 200px;
+    position: relative;
+    left: -132px;
+  }
+  li:hover{
+    transform: translateY(-5px);
+    scale: 1.1;
+    font-size: 30px;
+  }
+  
+  .completed {
+    text-decoration: line-through;
+    color: gray;
+  }
+  
+  button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 10px;
+  }
+  
