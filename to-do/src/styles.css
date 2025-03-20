@@ -1,1 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --notification-bg: #28a745;
+  --notification-text: white;
+  --notification-shadow: rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode {
+  --notification-bg: #2e7d32;
+  --notification-text: white;
+  --notification-shadow: rgba(0, 0, 0, 0.4);
+}
+
+.notification {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--notification-bg);
+  color: var(--notification-text);
+  padding: 10px 15px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px var(--notification-shadow);
+  animation: fadeInOut 3s ease-in-out;
+  z-index: 1000;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(10px); }
+  10% { opacity: 1; transform: translateY(0); }
+  90% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(10px); }
+}
+  

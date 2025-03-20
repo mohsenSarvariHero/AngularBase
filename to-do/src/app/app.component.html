@@ -1,2 +1,8 @@
-<app-addtodo></app-addtodo>
-<app-todolist></app-todolist>
+<div class="container">
+  <button (click)="toggleDarkMode()" class="theme-toggle">
+    {{ isDarkMode ? '☀️ Light Mode' : '🌙 Dark Mode' }}
+  </button>
+
+  <app-addtodo></app-addtodo>
+  <app-todolist></app-todolist>
+</div>

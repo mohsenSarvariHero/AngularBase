@@ -1,27 +1,69 @@
+:root {
+  --bg-color: #ffffff;
+  --text-color: #333333;
+  --border-color: #dddddd;
+  --input-bg: #ffffff;
+  --button-bg: #4CAF50;
+  --button-hover-bg: #45a049;
+  --placeholder-color: #999999;
+  --button-text: #ffffff;
+}
+
+:root.dark-mode {
+  --bg-color: #2d2d2d;
+  --text-color: #e0e0e0;
+  --border-color: #404040;
+  --input-bg: #2d2d2d;
+  --button-bg: #4CAF50;
+  --button-hover-bg: #45a049;
+  --placeholder-color: #888888;
+  --button-text: #ffffff;
+}
+
 .add-todo {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 15px;
-  }
-  
-  input {
-    flex: 1;
-    padding: 8px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  button {
-    padding: 8px 12px;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #218838;
-  }
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+  padding: 15px;
+  background-color: var(--bg-color);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.add-todo input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 1em;
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+.add-todo input::placeholder {
+  color: var(--placeholder-color);
+}
+
+.add-todo input:focus {
+  outline: none;
+  border-color: #4CAF50;
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+}
+
+.add-todo button {
+  padding: 10px 20px;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: all 0.2s ease;
+}
+
+.add-todo button:hover {
+  background-color: var(--button-hover-bg);
+}
   

@@ -8,16 +8,15 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './addtodo.component.html',
   styleUrl: './addtodo.component.css'
 })
-export class AddtodoComponent  {
-    todoTitle:string = '';
-    //constructor(private todoService:TodoService){}
-    constructor(private todoservice:TodoService){}
+export class AddtodoComponent {
+  todoTitle: string = '';
+  
+  constructor(private todoService: TodoService) {}
 
-    addTodo(){
-      if(this.todoTitle.trim()){
-        this.todoservice.addTodo(this.todoTitle);
-        this.todoTitle='';
-      }
-      
+  addTodo() {
+    if(this.todoTitle.trim()) {
+      this.todoService.addTodo(this.todoTitle);
+      this.todoTitle = '';
     }
+  }
 }

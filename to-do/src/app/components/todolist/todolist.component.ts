@@ -12,6 +12,8 @@ import { CommonModule } from '@angular/common';
 })
 export class TodolistComponent implements OnInit {
   todos:Todo[] = [];
+  // private todos: Todo[] = JSON.parse(localStorage.getItem('todos') || '[]');
+
   constructor(private todoService:TodoService){}
 
   ngOnInit(){
@@ -28,4 +30,23 @@ export class TodolistComponent implements OnInit {
     this.todoService.deleteTodo(id)
   }
 
+  setFilter(filter:'all' |  'completed' | 'pending'){
+    this.todoService.setFilter(filter)
+  }
+
+  editingTodoId: number | null = null;
+  editingTitle: string = '';
+
+  editTodo(todo: Todo) {
+    this.editingTodoId = todo.id;
+    this.editingTitle = todo.title;
+  }
+  
+  updateTodo(id: number) {
+    if (this.editingTitle.trim()) {
+      this.todoService.updateTodo(id, this.editingTitle);
+    }
+    this.editingTodoId = null;
+  }
+  
 }

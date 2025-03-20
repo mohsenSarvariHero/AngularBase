@@ -1,1 +1,20 @@
-<p>todoitem works!</p>
+<div class="todo-item" [class.completed]="todo.completed">
+  <div class="todo-content">
+    <input type="checkbox" [checked]="todo.completed" (change)="toggleTodo()">
+    
+    <div class="todo-text" *ngIf="!isEditing">
+      <span (click)="startEditing()">{{ todo.title }}</span>
+    </div>
+    
+    <div class="edit-form" *ngIf="isEditing">
+      <input 
+        type="text" 
+        [(ngModel)]="editedTitle" 
+        (keyup.enter)="saveEdit()"
+        (keyup.escape)="cancelEdit()"
+        autofocus>
+    </div>
+  </div>
+  
+  <button class="delete-btn" (click)="deleteTodo()">×</button>
+</div>
