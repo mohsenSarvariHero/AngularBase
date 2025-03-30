@@ -9,6 +9,7 @@ export interface IDesignation{
 }
 
 export interface APIResponseModel {
+    data: IRole[];
     message : string,
     result : boolean;
     date : any

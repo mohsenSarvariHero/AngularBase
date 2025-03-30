@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اسلایدر داینامیک</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            direction: rtl;
+            background: #f5f5f5;
+        }
+        .slider-container {
+            width: 90%;
+            max-width: 900px;
+            margin: 20px auto;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background: white;
+        }
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .slide {
+            flex: 0 0 25%;
+            box-sizing: border-box;
+            padding: 10px;
+            text-align: center;
+            background-color: aliceblue;
+            margin: 10px;
+        }
+        .slide img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+        .buttons button {
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+        .buttons button:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="slider-container">
+        <div class="slider" id="slider" role="region" aria-label="کارت‌های محصولات"></div>
+        <div class="buttons">
+            <button id="prev">❮</button>
+            <button id="next">❯</button>
+        </div>
+    </div>
+
+    <script>
+        const cards = [
+            { image: "https://via.placeholder.com/150", title: "کارت ۱" },
+            { image: "https://via.placeholder.com/150", title: "کارت ۲" },
+            { image: "https://via.placeholder.com/150", title: "کارت ۳" },
+            { image: "https://via.placeholder.com/150", title: "کارت ۴" },
+            { image: "https://via.placeholder.com/150", title: "کارت ۵" },
+            { image: "https://via.placeholder.com/150", title: "کارت ۶" },
+            { image: "https://via.placeholder.com/150", title: "کارت ۷" },
+            { image: "https://via.placeholder.com/150", title: "کارت ۸" },
+            { image: "https://via.placeholder.com/150", title: "کارت ۹" },
+            { image: "https://via.placeholder.com/150", title: "کارت ۱۰" },
+            { image: "https://via.placeholder.com/150", title: "کارت ۱۱" },
+            { image: "https://via.placeholder.com/150", title: "کارت ۱۲" }
+        ];
+
+        const slider = document.getElementById('slider');
+        const prevButton = document.getElementById('prev');
+        const nextButton = document.getElementById('next');
+
+        // Generate cards dynamically
+        cards.forEach(card => {
+            const slide = document.createElement('div');
+            slide.classList.add('slide');
+            slide.innerHTML = `<img src="${card.image}" alt="${card.title}"><h3>${card.title}</h3>`;
+            slider.appendChild(slide);
+        });
+
+        let index = 0;
+        const slideWidth = document.querySelector('.slide').clientWidth;
+        const totalSlides = cards.length;
+        const slidesPerView = 4; // 4 cards visible at a time
+
+        function updateSlider() {
+            slider.style.transform = `translateX(${-index * slideWidth}px)`;
+        }
+
+        nextButton.addEventListener('click', () => {
+            if (index < totalSlides - slidesPerView) {
+                index++;
+                updateSlider();
+            }
+        });
+
+        prevButton.addEventListener('click', () => {
+            if (index > 0) {
+                index--;
+                updateSlider();
+            }
+        });
+
+    </script>
+
+</body>
+</html>

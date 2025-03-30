@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="master.component.css">
 </head>
 <body>
+    <h1>هزخدس</h1>
+    
+    <p style="margin: 60px;"><i class="fa-solid fa-star"></i></p>
     <div class="container">
         <h1>{{currentDate | date:"dd-MMM-yyyy"}}</h1>
         <header class="header">
@@ -22,6 +25,47 @@
 
         <h2>{{firstName()}}</h2>
         <button class="btn btn-secondary" (click)="change()">change</button>
+        <hr/>
+        {{name}}
+        <br />
+        <input type="text" (input)="onInputChange($event)" >
+        <input type="text" [(ngModel)]="name" >
+
+        <hr style="width: 100px; height: 10px; background-color: black; border: none; margin: auto;" />
+    </div>
+    <div >
+        <h2 *ngIf="welcome !== ''">{{ welcome }}</h2>
+        <h2 *ngIf="welcome === ''">Enter</h2>
+        <hr>
+        <h1>{{welcome}}</h1>
+        <input type="text" (input)="changeWelcome($event)">
+        <br>
+        <br>
+        <p>password</p>
+        <input type="password" (input)="passwordOne($event)">
+        <br>
+        <input type="password" (input)="passwordTwo($event)">
+        <p>{{message}}</p>
+    </div>
+
+    <p [ngStyle]="styles">This text will be red.</p>
+    <p *ngIf="show">ngIfName</p>
+    <p *ngIf="!show">ngIfAge</p>
+    <button (click)="show = !show">change</button>
+    <hr/>
+    <ul>
+        <li *ngFor="let user of users; let i=index">{{i }}:{{user}}</li>
+    </ul>
+    <ul>
+        <li *ngFor="let user of userObj; let i=index; trackBy: trackByUserId">{{user.id }}:{{user.name}}</li>
+    </ul>
+    <button (click)="addUsers()">adding</button>
+    <div>
+        <input (input)="inputFunTwo($event)" type="text">
+        <button (click)="addingNew()" >add</button>
+        <ul>
+            <li *ngFor="let user of userObj; let i=index; trackBy: trackByUserId">{{user.id }}:{{user.name}}</li>
+        </ul>>
     </div>
 </body>
 </html>

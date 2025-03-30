@@ -16,14 +16,26 @@ export class RolesComponent implements OnInit {
   
   roleList: IRole[] = [];
   http = inject(HttpClient);
+  
   ngOnInit(): void {
-    this.getAllRoles()
+    this.getAllRoles();
   }
+  
   getAllRoles() {
-    this.http.get<APIResponseModel>("https://freeapi.miniprojectideas.com/api/ClientStrive/GetAllRoles").subscribe((res: APIResponseModel ) => {
-      this.roleList = res.date;
-    })
+    this.http.get<APIResponseModel>("/api/ClientStrive/GetAllRoles")  // Remove extra `/api`
+      .subscribe({
+        next: (res) => {
+          console.log("API Response:", res);
+          this.roleList = res?.data || [];
+          console.log(this.roleList)
+        },
+        error: (error) => {
+          console.error("Error fetching roles:", error);
+        }
+      });
   }
+  
+  
   
   // string ,  number , boolean , date , object , array , null , undefined
   firstName: string = "hello mohsen";

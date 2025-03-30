@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اسلایدر کارت‌ها</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            direction: rtl;
+            text-align: center;
+            background: #f5f5f5;
+        }
+        .swiper {
+            width: 90%;
+            max-width: 1200px;
+            margin: 10px auto;
+        }
+        .swiper-slide {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .swiper-slide img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .swiper-slide h3 {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #333;
+        }
+        /* .swiper-pagination{
+            margin-top: 30px;
+        } */
+    </style>
+</head>
+<body>
+
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="https://via.placeholder.com/150" alt="کارت 1">
+                <h3>کارت ۱</h3>
+            </div>
+            <div class="swiper-slide">
+                <img src="https://via.placeholder.com/150" alt="کارت 2">
+                <h3>کارت ۲</h3>
+            </div>
+            <div class="swiper-slide">
+                <img src="https://via.placeholder.com/150" alt="کارت 3">
+                <h3>کارت ۳</h3>
+            </div>
+            <div class="swiper-slide">
+                <img src="https://via.placeholder.com/150" alt="کارت 4">
+                <h3>کارت ۴</h3>
+            </div>
+            <div class="swiper-slide">
+                <img src="https://via.placeholder.com/150" alt="کارت 5">
+                <h3>کارت ۵</h3>
+            </div>
+            <div class="swiper-slide">
+                <img src="https://via.placeholder.com/150" alt="کارت 6">
+                <h3>کارت ۶</h3>
+            </div>
+            <div class="swiper-slide">
+                <img src="https://via.placeholder.com/150" alt="کارت 7">
+                <h3>کارت ۷</h3>
+            </div>
+            <div class="swiper-slide">
+                <img src="https://via.placeholder.com/150" alt="کارت 8">
+                <h3>کارت ۸</h3>
+            </div>
+        </div>
+        <!-- دکمه‌های ناوبری -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 4, 
+            spaceBetween: 10, 
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            breakpoints: {
+                768: { slidesPerView: 4 }, 
+                480: { slidesPerView: 2 },
+                320: { slidesPerView: 1 }
+            }
+        });
+    </script>
+
+</body>
+</html>

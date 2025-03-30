@@ -1,0 +1,3 @@
+export defaultn function Footer(){
+    
+}
