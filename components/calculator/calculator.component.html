@@ -1,0 +1,26 @@
+<p>calculator works!</p>
+<div class="calculator">
+    
+        <input type="text" [value]="currentInput" disabled class="display" />
+    
+    <div class="calculator-buttons">
+        <p (click)="buttonInput('*')" class="button-operator">*</p>
+        <p (click)="buttonInput('1')">1</p>
+        <p (click)="buttonInput('2')">2</p>
+        <p (click)="buttonInput('3')">3</p>
+        <p (click)="buttonInput('/')" class="button-operator">/</p>
+        <p (click)="buttonInput('4')">4</p>
+        <p (click)="buttonInput('5')">5</p>
+        <p (click)="buttonInput('6')">6</p>
+        <p (click)="buttonInput('+')" class="button-operator">+</p>
+        <p (click)="buttonInput('7')">7</p>
+        <p (click)="buttonInput('8')">8</p>
+        <p (click)="buttonInput('9')">9</p>
+        <p (click)="buttonInput('-')" class="button-operator">-</p>
+        <p (click)="buttonInput('0')">0</p>
+      
+        <p (click)="buttonInput('.')" class="button-operator">.</p>
+        <p (click)="buttonInput('=')" class="button-operator">=</p>
+        <p (click)="buttonInput('clear')" class="button-operator">clear</p>
+    </div>
+</div>
